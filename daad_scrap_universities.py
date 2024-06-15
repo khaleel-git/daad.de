@@ -20,7 +20,7 @@ from selenium.webdriver.common.keys import Keys
 from bs4 import BeautifulSoup
 
 unique_links = set()
-with open("daad_links.txt", "w") as fd:
+with open("daad_all_universities_links.txt", "w") as fd:
     fd.write("Computer Science Universities\n")
 
 def fetch_links(url):
@@ -56,12 +56,12 @@ def fetch_links(url):
             print(ex)  
             break
 
-url = "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/result/?q=Computer%20Science&degree%5B%5D=2&lang%5B%5D=2&fos=&cert=&admReq=&langExamPC=&scholarshipLC=&langExamLC=&scholarshipSC=&langExamSC=&langDeAvailable=&langEnAvailable=&lvlEn%5B%5D=&modStd%5B%5D=7&cit%5B%5D=&tyi%5B%5D=&ins%5B%5D=&fee=&bgn%5B%5D=1&dat%5B%5D=&prep_subj%5B%5D=&prep_degree%5B%5D=&sort=3&dur=&subjects%5B%5D=&limit=100&offset=&display=list"
+url = "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/result/?q=information%20communication%20systems&degree%5B%5D=2&lang%5B%5D=2&fos=&cert=&admReq=&langExamPC=&scholarshipLC=&langExamLC=&scholarshipSC=&langExamSC=&langDeAvailable=&langEnAvailable=&lvlEn%5B%5D=&modStd%5B%5D=7&cit%5B%5D=&tyi%5B%5D=&ins%5B%5D=&fee=1&bgn%5B%5D=1&dat%5B%5D=&prep_subj%5B%5D=&prep_degree%5B%5D=&sort=3&dur=&subjects%5B%5D=&limit=100&offset=&display=list"
 fetch_links(url)
 
 
 print(f"Total Universities in Computer Science: {len(unique_links)}")
 # Writing to a file
-with open("daad_links.txt", "a") as fd:
+with open("daad_all_universities_links.txt", "a") as fd:
     for link in unique_links:    
         fd.write(f"{link}\n")
